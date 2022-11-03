@@ -1,0 +1,17 @@
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/bin/Debug/net6.0/Network.Infrastructure.deps.json
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/bin/Debug/net6.0/Network.Infrastructure.dll
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/bin/Debug/net6.0/Network.Infrastructure.pdb
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.csproj.AssemblyReference.cache
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.AssemblyInfoInputs.cache
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.AssemblyInfo.cs
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.dll
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/refint/Network.Infrastructure.dll
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.pdb
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/ref/Network.Infrastructure.dll
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/bin/Debug/net6.0/Network.Application.dll
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/bin/Debug/net6.0/Network.Domain.dll
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/bin/Debug/net6.0/Network.Application.pdb
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/bin/Debug/net6.0/Network.Domain.pdb
+/Users/apple/Amdaris/Web/Network/Network.Infrastructure/obj/Debug/net6.0/Network.Infrastructure.csproj.CopyComplete
