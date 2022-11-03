@@ -28,11 +28,28 @@ public class PostController : AppBaseController
     }
 
     [HttpGet("{id}")]
-    public async Task<GetByIdPostDto> GetPost(int id)
+    public async Task<GetPostByIdDto> GetPost(int id)
     {
         var postDto = await _mediator.Send(new GetPostByIdQuery() {PostId = id});
         return postDto;
     }
+
+    [HttpGet("{userId}")]
+    public async Task<IEnumerable<GetPostByFieldDto>> GetPostsByUserId(int userId)
+    {
+        var posts = await _mediator
+            .Send(new GetPostsByUserIdQuery() {UserId = userId});
+        return posts;
+    }
+
+    [HttpGet("{username}")]
+    public async Task<IEnumerable<GetPostByFieldDto>> GetPostsByUsername(string username)
+    {
+        var posts = await _mediator
+            .Send(new GetPostsByUsernameQuery() {Username = username});
+        return posts;
+    }
+
 
     [HttpPatch("{id}")]
     public async Task UpdatePost(UpdatePostCommand updatePostCommand)

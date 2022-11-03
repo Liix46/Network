@@ -24,6 +24,14 @@ public class EFCoreRepository : IRepository
     {
         return await _networkDbContext.Set<TEntity>().ToListAsync();
     }
+
+    public async Task<List<TEntity>> GetAllWithInclude<TEntity>(
+        params Expression<Func<TEntity?, object>>[] includeProperties) where TEntity : BaseEntity
+    {
+        var query = IncludeProperties(includeProperties);
+        return await query!.ToListAsync<TEntity>();
+    }
+    
     
     public async Task<TEntity?> GetById<TEntity>(int id) where TEntity : BaseEntity
     {
