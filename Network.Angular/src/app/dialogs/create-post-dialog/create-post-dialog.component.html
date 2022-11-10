@@ -1,0 +1,28 @@
+<div class="main-container">
+  <mat-card class="card-container">
+    <mat-card-header class="header-container">
+      <mat-card-title><span>Create new post</span></mat-card-title>
+      <button mat-button color="primary" id="buttonNext">Next</button>
+    </mat-card-header>
+    <mat-divider inset></mat-divider>
+    <mat-card-content class="card-content" id="cardContent">
+      <div class="icon-container">
+        <mat-icon class="icon-upload">cloud_upload</mat-icon>
+      </div>
+      <div class="description-container">
+        <h2>Drag photos and videos here</h2>
+      </div>
+      <div class="button-container">
+        <input type="file" accept=".png, .jpg, .jpeg" #file id="imgInput" style="display:none" multiple>
+        <button (click)="file.click()" mat-flat-button color="primary">Select From Computer</button>
+      </div>
+    </mat-card-content>
+<!--    <mat-card-footer class="footer-container">-->
+<!--      <mat-progress-bar mode="indeterminate"></mat-progress-bar>-->
+<!--    </mat-card-footer>-->
+  </mat-card>
+
+</div>
+<div class="img-container" id="imgContainer">
+</div>
+

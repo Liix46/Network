@@ -1,0 +1,38 @@
+<div>
+  <mat-card>
+    <mat-card-title>Network</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="userRegForm" (ngSubmit)="registration()">
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Email address" formControlName="Email">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Username" formControlName="UserName">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Full Name" formControlName="FullName">
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="Password">
+          </mat-form-field>
+        </p>
+        <div class="button">
+          <button type="submit" mat-raised-button color="primary">Sign Up</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="card-footer">
+    <mat-label class="label-reg">
+      <span class="label-span">Have an account?</span>
+      <button mat-button color="primary" routerLink="/login">Sign In</button>
+    </mat-label>
+  </mat-card>
+</div>

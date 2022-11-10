@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "Network.Angular"
+  "cli": {
+    "analytics": "19f52844-180b-4a9a-9700-a38e854f6e8a"
+  }
 }
