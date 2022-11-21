@@ -1,4 +1,4 @@
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Application.App.Post.Response;
 

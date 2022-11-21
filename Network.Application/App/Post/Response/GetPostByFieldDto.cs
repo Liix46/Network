@@ -1,4 +1,4 @@
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Application.App.Post.Response;
 
@@ -12,5 +12,4 @@ public class GetPostByFieldDto
     public List<Like>? Likes { get; set; }
     
     public int UserId { get; set; }
-    public User? User { get; set; }
 }

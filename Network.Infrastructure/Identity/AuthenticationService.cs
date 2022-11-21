@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Network.Application.Common.Interfaces;
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Infrastructure.Identity;
 
@@ -19,4 +19,6 @@ public class AuthenticationService : IAuthenticationService
 
         return checkingPasswordResult.Succeeded;
     }
+    
+    
 }

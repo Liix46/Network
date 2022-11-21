@@ -3,29 +3,28 @@ using FluentValidation;
 using MediatR;
 using Network.Application.App.Post.Response;
 using Network.Application.Common.Interfaces.Repositories;
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Application.App.Post.Command;
 
 public class CreatePostCommand : IRequest<CreatePostDto>
 {
-    public string? Description { get; set; }
-    public DateTime DatePublication { get; set; }
-    public int UserId { get; set; }
-    public List<Image>? Images { get; set; }
+    public string? description { get; set; }
+    public DateTime datePublication { get; set; }
+    public int userId { get; set; }
 }
 
 public class CreatePostValidator : AbstractValidator<CreatePostCommand>
 {
     public CreatePostValidator()
     {
-        RuleFor(x => x.Description)
+        RuleFor(x => x.description)
             .NotNull()
             .Length(0, 500);
-        RuleFor(x => x.UserId)
+        RuleFor(x => x.userId)
             .NotNull()
             .NotEmpty();
-        RuleFor(x => x.DatePublication)
+        RuleFor(x => x.datePublication)
             .NotEmpty();
     }
 }
@@ -43,8 +42,12 @@ public class CreatePostCommandHandle : IRequestHandler<CreatePostCommand, Create
 
     public async Task<CreatePostDto> Handle(CreatePostCommand request, CancellationToken cancellationToken)
     {
-        var post = _mapper.Map<Domain.Post>(request);
-        _repository.Add(post);
-        return _mapper.Map<CreatePostDto>(post);
+        var post = _mapper.Map<Domain.Models.Post>(request);
+        await _repository.AddAsync(post);
+        
+        await _repository.SaveChangesAsync();
+
+        var postDto = _mapper.Map<CreatePostDto>(post);
+        return postDto;
     }
 }

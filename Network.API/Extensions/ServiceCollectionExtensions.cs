@@ -86,7 +86,9 @@ public static class ServiceCollectionExtensions
                 ValidateLifetime = true,
 
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = authOptions.GetSymmetricSecurityKey()
+                IssuerSigningKey = authOptions.GetSymmetricSecurityKey(),
+                RoleClaimType = "roles",
+                NameClaimType = "name"
             };
         });
     }

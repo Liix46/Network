@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.Extensions.FileProviders;
 using Network.API.Extensions;
 using Network.Application.Common.Interfaces.Repositories;
 using Network.Infrastructure.Persistance.Repositories;
@@ -17,11 +18,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();
+app.UseDirectoryBrowser(new DirectoryBrowserOptions()
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot", "uploads")),
+    RequestPath = new PathString("/uploads")
+});
+
 app.UseExceptionHandling();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors(configurePolicy => configurePolicy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-app.UseAuthorization();
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseDbTransction();
 app.UseEndpoints(endpoints =>

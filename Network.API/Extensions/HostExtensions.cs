@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Identity;
-using Network.Domain;
+using Network.Domain.Models;
 using Network.Infrastructure.Persistance.Contexts;
 using Network.Infrastructure.Persistance.DataSeed.SeedFacade;
 

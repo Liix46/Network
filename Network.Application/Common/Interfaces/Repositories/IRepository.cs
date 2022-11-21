@@ -1,5 +1,5 @@
 using System.Linq.Expressions;
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Application.Common.Interfaces.Repositories;
 
@@ -14,5 +14,7 @@ public interface IRepository
     Task SaveChangesAsync();
     void Add<TEntity>(TEntity entity) where TEntity : BaseEntity;
 
+    Task AddAsync<TEntity>(TEntity entity) where TEntity : BaseEntity;
     Task<TEntity> Delete<TEntity>(int id) where TEntity : BaseEntity;
+    
 }

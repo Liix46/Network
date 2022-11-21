@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Network.Domain;
+using Network.Domain.Models;
 using Network.Domain.Auth;
 using Network.Infrastructure.Persistance.Constants;
 
@@ -11,13 +11,20 @@ public class NetworkDbContext : IdentityDbContext<User, Role, int, UserClaim, Us
 {
     public NetworkDbContext(DbContextOptions<NetworkDbContext> options) : base(options)
     {
-        //this.Database.EnsureDeleted();
-        //this.Database.EnsureCreated();
+        //Database.EnsureDeleted();
+        //Database.EnsureCreated();
+    }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);            
     }
     
     public DbSet<Post> Posts { get; set; }
     public DbSet<Comment> Comments { get; set; }
     public DbSet<Image> Images { get; set; }
+    public DbSet<Like> Likes { get; set; }
+    public DbSet<Following> Followings { get; set; }
+    public DbSet<Follower> Followers { get; set; }
     
     private void ApplyIdentityMapConfiguration(ModelBuilder modelBuilder)
     {

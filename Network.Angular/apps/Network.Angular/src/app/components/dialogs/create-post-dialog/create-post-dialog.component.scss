@@ -1,0 +1,183 @@
+html, body{
+  padding: 0;
+  margin:0;
+}
+
+.main-container{
+  width: 40vw;
+  height: 78vh;
+  max-height: 78vh;
+}
+.card-container{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.actions-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.icon-container{
+  margin-top: 200px!important;
+  margin-bottom: 50px;
+}
+.icon-upload{
+  transform: scale(6);
+}
+.description-container, .button-container, .icon-container, .footer-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0px!important;
+  padding-top: 5px;
+}
+.card-title{
+  margin-bottom: 0!important;
+  height: 36px;
+  text-align: center;
+  width: 100%;
+}
+.span-title{
+  display: inline-block;
+  height: 100%;
+  vertical-align: sub;
+  font-size: 12pt;
+}
+.footer-container{
+  margin-top: 8em;
+  padding: 1em;
+}
+
+.img-container{
+  position: relative;
+  width: 40vw;
+  height: 72.6vh;
+  //left: 0;
+  bottom: 577px;
+  display: none;
+  background-size: cover;
+  overflow: hidden;
+  transform: none;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
+}
+
+::ng-deep .mat-card-header-text {
+  display: flex;
+  order: 2;
+  margin: 0!important;
+  width: 70%;
+  //border: solid 1px black;
+}
+
+
+.buttonPrefContainer , .buttonNextContainer {
+  display: flex;
+  //border: solid 1px black;
+}
+.buttonPrefContainer {
+  order: 1;
+  //margin-left: 45px;
+  margin-right: 45px;
+  position: relative;
+  bottom: 1px;
+
+}
+.buttonNextContainer {
+  order: 3;
+  margin-left: 11%;
+  //margin-right: 25px;
+  position: relative;
+  bottom: 1px;
+}
+
+.span-pref-button, .span-next-button{
+  transform: scale(2);
+  display: block;
+}
+
+
+//  height: 576px; width: 752.326531px;
+
+.setting-container{
+  display: flex;
+  flex-direction: column;
+}
+.bio-container{
+  display: flex;
+  width: 24vw;
+  height: 72vh;
+  //border: solid black 1px;
+  position: relative;
+  left: 40vw;
+  bottom: 580px;
+  flex-direction: column;
+}
+
+.bio-container > div {
+  display: flex;
+}
+.bio-title-container{
+  align-items: stretch;
+  border: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  margin: 18px 0 0px;
+  padding-left: 12px;
+}
+.bio-title-container > div {
+  display: flex;
+  //border: solid 1px black;
+}
+.bio-img-container{
+  height: 28px;
+  width: 28px;
+}
+.img-user{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.bio-fullname-container{
+  align-items: center;
+  margin-left: 10px;
+}
+
+.bio-fullname-container > span {
+  margin: 0;
+}
+
+.input-container{
+  //border: solid 1px black;
+  width: 100%;
+}
+
+input-hint {
+  width: 100%;
+}
+
+.close-container{
+  position: absolute;
+  right: 2vw;
+  top: 2vw;
+  z-index: 1;
+  cursor: pointer;
+}
+::ng-deep .cdk-overlay-dark-backdrop{
+  background: rgba(0,0,0,.6);
+}
+
+
+

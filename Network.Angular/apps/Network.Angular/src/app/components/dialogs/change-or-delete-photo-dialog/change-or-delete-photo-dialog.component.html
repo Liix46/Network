@@ -1,0 +1,11 @@
+<div class="dialog-container">
+  <div class="header-container container">
+    <h3>Change profile photo</h3>
+  </div>
+  <div class="dialog-content container">
+      <input (change)="uploadPhoto($event)" type="file" accept=".png, .jpg, .jpeg" #file id="imgInput" style="display: none">
+      <button mat-stroked-button color="primary" (click)="file.click()">Upload Photo</button>
+      <button mat-stroked-button color="warn" (click)="clickRemoveImage()">Remove current photo</button>
+      <button mat-stroked-button mat-dialog-close>Cancel</button>
+  </div>
+</div>

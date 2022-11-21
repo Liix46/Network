@@ -17,4 +17,9 @@
       <ProjectReference Include="..\Network.Infrastructure\Network.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\uploads" />
+      <Folder Include="wwwroot\uploads\Liix46\avatars" />
+    </ItemGroup>
+
 </Project>

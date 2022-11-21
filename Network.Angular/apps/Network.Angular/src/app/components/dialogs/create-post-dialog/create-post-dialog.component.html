@@ -1,0 +1,61 @@
+<div class="main-container" id="mainContainer">
+  <mat-card class="card-container">
+    <mat-card-header class="header-container">
+      <div class="buttonPrefContainer" (click)="ClickPref()">
+        <button mat-button color="primary" id="buttonPref">
+          <span class="span-pref-button">←</span>
+        </button>
+      </div>
+      <div mat-card-header-text></div>
+      <mat-card-title class="card-title">
+        <span class="span-title">Create new post</span>
+      </mat-card-title>
+      <div class="buttonNextContainer">
+        <button mat-button color="primary" id="buttonNext" (click)="ClickNext()" >
+          <span class="span-next-button">→</span>
+        </button>
+      </div>
+    </mat-card-header>
+    <mat-divider inset></mat-divider>
+    <mat-card-content class="card-content" id="cardContent">
+      <div class="icon-container" >
+        <mat-icon class="icon-upload">cloud_upload</mat-icon>
+      </div>
+      <div class="description-container">
+        <h2>Drag photos and videos here</h2>
+      </div>
+      <div class="button-container">
+        <input type="file" accept=".png, .jpg, .jpeg" #file id="imgInput" style="display:none" multiple>
+        <button (click)="file.click()" mat-flat-button color="primary">Select From Computer</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="setting-container">
+    <div class="img-container" id="imgContainer"></div>
+  </div>
+</div>
+<div class="bio-container">
+  <div class="bio-title-container" *ngIf="user">
+    <div class="bio-img-container">
+      <img class="img-user" src="{{user.urlMainImage}}">
+    </div>
+    <div class="bio-fullname-container"><span>{{user.name}}</span> </div>
+  </div>
+  <div class="input-container">
+    <input-hint (onChangedTextArea)="onChangedText($event)"></input-hint>
+  </div>
+  <div></div>
+</div>
+<div class="close-container" mat-dialog-close>
+  <svg aria-label="Close" color="#ffffff" fill="#ffffff" height="18" role="img" viewBox="0 0 24 24" width="18">
+    <title>Close</title>
+    <polyline fill="none" points="20.643 3.357 12 12 3.353 20.647" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+    <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" x1="20.649" x2="3.354" y1="20.649" y2="3.354"></line>
+  </svg>
+</div>
+
+
+
+
+

@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{FD504296-1447-4BC9-BC31-0B64BC4FC905}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/apple/Amdaris/Web/Network/Network.API/Controllers/AccountController.cs" relfile="Network.API/Controllers/AccountController.cs" line="58" column="1" />
+      <Breakpoint file="/Users/apple/Amdaris/Web/Network/Network.API/Controllers/AccountController.cs" relfile="Network.API/Controllers/AccountController.cs" line="59" column="1" />
+      <Breakpoint file="/Users/apple/Amdaris/Web/Network/Network.API/Controllers/AccountController.cs" relfile="Network.API/Controllers/AccountController.cs" line="60" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Network.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Network.Infrastructure/Identity/IdentityUserService.cs">
+    <Files>
+      <File FileName="Network.API/Controllers/PostController.cs" Line="1" Column="1" />
+      <File FileName="Network.API/Controllers/AccountController.cs" Line="59" Column="1" />
+      <File FileName="Network.Application/Common/Behaviours/ValidationBehaviour.cs" Line="36" Column="1" />
+      <File FileName="Network.Infrastructure/Identity/IdentityUserService.cs" Line="17" Column="1" />
+      <File FileName="Network.API/Middlewares/DbTransactionMiddleware.cs" Line="18" Column="1" />
+      <File FileName="Network.API/Middlewares/ExceptionHandlingMiddleware.cs" Line="38" Column="1" />
+      <File FileName="Network.API/Middlewares/Models/ErrorDetails.cs" Line="13" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Network" expanded="True">
+            <Node name="Network.API" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Middlewares" expanded="True">
+                <Node name="Models" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Network.Application" expanded="True">
+              <Node name="Common" expanded="True">
+                <Node name="Behaviours" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Network.Infrastructure" expanded="True">
+              <Node name="Identity" expanded="True">
+                <Node name="IdentityUserService.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

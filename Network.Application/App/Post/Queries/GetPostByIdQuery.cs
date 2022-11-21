@@ -22,8 +22,8 @@ public class GetPostByIdQueryHandler : IRequestHandler<GetPostByIdQuery, GetPost
     }
     public async Task<GetPostByIdDto> Handle(GetPostByIdQuery request, CancellationToken cancellationToken)
     {
-        var post = await _repository.GetByIdWithInclude<Domain.Post>(request.PostId,
-            post => post.Comments, post => post.Images, post=> post.Likes);
+        var post = await _repository.GetByIdWithInclude<Domain.Models.Post>(request.PostId,
+            post => post.Comments, post=> post.Likes);
 
         var postDto = _mapper.Map<GetPostByIdDto>(post);
         return postDto;

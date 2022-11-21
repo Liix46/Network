@@ -1,9 +1,16 @@
+using System.Reflection;
+using System.Security.Principal;
+using MediatR;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Network.Application.App.Auth.Commands;
 using Network.Application.Common.Interfaces;
 using Network.Application.Common.Interfaces.Repositories;
-using Network.Domain;
+using Network.Domain.Models;
 using Network.Domain.Auth;
 using Network.Infrastructure.Identity;
 using Network.Infrastructure.Persistance.Contexts;
@@ -26,11 +33,19 @@ public static class ServiceCollectionExtensions
         })
         .AddEntityFrameworkStores<NetworkDbContext>();
 
-        services.AddScoped<IRepository, EFCoreRepository>();
+        services.AddScoped<IRepository, EfCoreRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
         services.AddTransient<IAuthenticationService, AuthenticationService>();
         services.AddTransient<IRegistrationService, RegistrationService>();
         services.AddTransient<ITokenService, TokenService>();
-
+        services.AddTransient<ISignOutService, SignOutService>();
+        
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        services.AddTransient<IPrincipal>(provider => provider.GetService<IHttpContextAccessor>().HttpContext.User);
+        
+        services.AddTransient<IUserIdentityService, UserIdentityService>();
+        services.AddTransient<IFileService, FileService>();
+        
         return services;
     }
 }

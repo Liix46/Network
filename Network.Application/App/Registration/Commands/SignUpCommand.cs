@@ -1,7 +1,7 @@
 using MediatR;
 using Network.Application.App.Registration.Responses;
 using Network.Application.Common.Interfaces;
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Application.App.Registration.Commands;
 
@@ -32,7 +32,8 @@ public class SignUpCommandHandler : IRequestHandler<SignUpCommand, SignUpDto>
         {
             Name = request.FullName,
             UserName = request.UserName,
-            Email = request.Email
+            Email = request.Email,
+            
         };
 
         if (request.Password == null) throw new ArgumentNullException();
@@ -48,15 +49,15 @@ public class SignUpCommandHandler : IRequestHandler<SignUpCommand, SignUpDto>
         string? accessToken = null;
         if (passwordSignInResult)
         {
-            accessToken = _tokenService.GenerateAccessToken();
+            accessToken = _tokenService.GenerateAccessToken(user);
         }
 
         return new SignUpDto()
         {
-            FullName = user.Name,
-            UserName = user.UserName,
             AccessToken = accessToken,
-            Succeeded = passwordSignInResult
+            Succeeded = passwordSignInResult,
+            Id = user.Id,
+            Username = user.UserName
         };
     }
 }

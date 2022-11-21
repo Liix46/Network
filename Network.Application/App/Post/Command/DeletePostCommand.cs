@@ -23,6 +23,6 @@ public class DeletePostCommandHandler : IRequestHandler<DeletePostCommand, Delet
 
     public async Task<DeletePostDto> Handle(DeletePostCommand request, CancellationToken cancellationToken)
     {
-        return _mapper.Map<DeletePostDto>(_repository.Delete<Domain.Post>(request.Id));
+        return _mapper.Map<DeletePostDto>(_repository.Delete<Domain.Models.Post>(request.Id));
     }
 }

@@ -1,0 +1,103 @@
+{
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    },
+    "@schematics/angular:application": {
+      "strict": true
+    }
+  },
+  "sourceRoot": "apps/Network.Angular/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/Network.Angular",
+        "index": "apps/Network.Angular/src/index.html",
+        "main": "apps/Network.Angular/src/main.ts",
+        "polyfills": "apps/Network.Angular/src/polyfills.ts",
+        "tsConfig": "apps/Network.Angular/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/Network.Angular/src/favicon.ico",
+          "apps/Network.Angular/src/assets"
+        ],
+        "styles": [
+          "apps/Network.Angular/src/styles.scss",
+          "node_modules/@ctrl/ngx-emoji-mart/picker.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/Network.Angular/src/environments/environment.ts",
+              "with": "apps/Network.Angular/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "Network.Angular:build:production"
+        },
+        "development": {
+          "browserTarget": "Network.Angular:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "Network.Angular:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/Network.Angular/src/test.ts",
+        "polyfills": "apps/Network.Angular/src/polyfills.ts",
+        "tsConfig": "apps/Network.Angular/tsconfig.spec.json",
+        "karmaConfig": "apps/Network.Angular/karma.conf.js",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/Network.Angular/src/favicon.ico",
+          "apps/Network.Angular/src/assets"
+        ],
+        "styles": [
+          "apps/Network.Angular/src/styles.scss"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}

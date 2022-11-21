@@ -1,0 +1,27 @@
+<div class="search-container">
+  <div class="search-header">
+    <h2 class="search-title">Search</h2>
+  </div>
+  <div class="search-content">
+    <div class="search-input">
+      <form class="search-form">
+      <mat-form-field class="full-width">
+        <mat-label>Search</mat-label>
+        <input matInput (change)="usersSearch($event)">
+      </mat-form-field>
+      </form>
+    </div>
+    <mat-list class="search-result-container">
+
+      <mat-list-item  routerLink="/users/{{user.username}}" class="result-item" *ngFor="let user of searchUsers" >
+        <div class="img-result">
+          <img [srcset]="user.urlMainImage" class="img-item">
+        </div>
+        <div class="text-content-result">
+          <div [textContent]="user.username"></div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+

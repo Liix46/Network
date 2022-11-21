@@ -1,7 +1,7 @@
 using AutoMapper;
 using MediatR;
 using Network.Application.Common.Interfaces.Repositories;
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Application.App.Post.Command;
 
@@ -25,7 +25,7 @@ public class UpdatePostCommandHandler : IRequestHandler<UpdatePostCommand>
     
     public async Task<Unit> Handle(UpdatePostCommand request, CancellationToken cancellationToken)
     {
-        var post = await _repository.GetById<Domain.Post>(request.Id);
+        var post = await _repository.GetById<Domain.Models.Post>(request.Id);
         _mapper.Map(request, post);
         await _repository.SaveChangesAsync();
         

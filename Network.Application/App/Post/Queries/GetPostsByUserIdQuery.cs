@@ -23,7 +23,7 @@ public class GetPostsByUserIdQueryHandler : IRequestHandler<GetPostsByUserIdQuer
 
     public async Task<IEnumerable<GetPostByFieldDto>> Handle(GetPostsByUserIdQuery request, CancellationToken cancellationToken)
     {
-        var postList = await _repository.GetAllWithInclude<Domain.Post>(post => post.Comments, post => post.Images, post => post.Likes);
+        var postList = await _repository.GetAllWithInclude<Domain.Models.Post>(post => post.Comments, post => post.Likes);
         var sortedPostDtoList = _mapper.Map<List<GetPostByFieldDto>>(postList)
             .Where(post => post.UserId == request.UserId);
         return sortedPostDtoList;

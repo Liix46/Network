@@ -1,0 +1,42 @@
+.nav-container {
+  height: 100vh;
+  border-right: 0.5px solid darkgrey;
+  width: 18vw;
+}
+
+.sidenav{
+  width: 18vw;
+}
+
+.list-item-span{
+  margin-left: 15px;
+  font-weight: 400;
+}
+
+.nav-list > mat-list-item{
+  //padding: 0px 0px 0px 0px;
+  border-radius: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 90%;
+
+}
+.title-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  height: 55px;
+}
+.side-title{
+  font-family: cursive;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+mat-icon{
+  transform: scale(1.3);
+}
+
+

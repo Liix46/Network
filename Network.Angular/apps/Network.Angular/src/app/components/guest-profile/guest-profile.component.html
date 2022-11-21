@@ -1,0 +1,75 @@
+<div class="profile-container">
+  <app-sidenav> </app-sidenav>
+  <div class="main-container">
+    <div class="content-container">
+      <header class="header">
+        <div class="img-container">
+          <div class="img-content">
+            <div class="img-body">
+              <button class="img-button" title="Change profile photo">
+                <img class="profile-image"
+                     alt="Profile photo"
+                     [srcset]="user?.urlMainImage">
+              </button>
+            </div>
+          </div>
+        </div>
+        <section class="info-container">
+          <div class="header-section">
+            <h2 class="h2-full" [textContent]="user?.username"></h2>
+            <div class="follow-button-container">
+              <button mat-flat-button color="primary" class="active-button"
+              (click)="addFollow()">Follow</button>
+            </div>
+            <div class="message-button-container">
+              <button mat-stroked-button color="primary" class="active-button">Message</button>
+            </div>
+          </div>
+          <ul class="subscrib-container">
+            <li >
+              <div class="link-followers-body">
+                <span class="span-followers"[textContent]="countPosts"></span>
+                posts
+              </div>
+            </li>
+            <li>
+              <a class="link-followers">
+                <div class="link-followers-body">
+                  <span class="span-followers" [textContent]="countFollowers"></span>
+                  followers
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="link-followers">
+                <div class="link-followers-body">
+                  <span class="span-followers" [textContent]="countFollowings"></span>
+                  following
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="mini-info-container">
+            <span class="mini-info-span" [textContent]="user?.name"></span>
+            <br>
+            <div class="mini-info-quote"[textContent]="user?.bio" ></div>
+          </div>
+        </section>
+      </header>
+      <div class="type-img-container">
+        <a aria-selected="true" class="aria-container">
+          <div class="aria-child-container">
+
+          </div>
+        </a>
+      </div>
+      <div class="posts-container">
+        <div class="post-container" *ngFor="let image of images">
+          <div class="post-content">
+            <img [srcset]="image.url" class="image-item">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

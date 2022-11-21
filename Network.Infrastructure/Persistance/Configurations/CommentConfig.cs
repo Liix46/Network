@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Network.Domain;
+using Network.Domain.Models;
 
 namespace Network.Infrastructure.Persistance.Configurations;
 
