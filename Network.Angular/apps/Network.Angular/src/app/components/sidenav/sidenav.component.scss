@@ -2,6 +2,7 @@
   height: 100vh;
   border-right: 0.5px solid darkgrey;
   width: 18vw;
+  position: fixed;
 }
 
 .sidenav{
@@ -13,6 +14,9 @@
   font-weight: 400;
 }
 
+.nav-list > mat-list-item:last-child{
+  margin-top: 150px;
+}
 .nav-list > mat-list-item{
   //padding: 0px 0px 0px 0px;
   border-radius: 50px;

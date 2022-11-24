@@ -13,6 +13,8 @@ public class PostProfile : AutoMapper.Profile
         CreateMap<Post, CreatePostDto>();
         CreateMap<Post, DeletePostDto>();
         CreateMap<Post, UpdatePostDto>();
+        CreateMap<Post, GetPostByFieldDto>();
+        CreateMap<Post, GetPostByIdDto>();
         
         CreateMap<CreatePostCommand, Post>();
         CreateMap<DeletePostCommand, Post>();

@@ -1,13 +1,13 @@
+import {GetPostDto} from "../post/GetPostDto";
+
 export interface User {
+  id: number;
   name: string;
-  username: string;
+  userName: string;
   bio: string;
   urlMainImage:string|null;
   gender: Gender;
-}
-
-export interface CountPostsByUser {
-  count : number;
+  posts: Array<GetPostDto>| null
 }
 
 export enum Gender{

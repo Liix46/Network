@@ -2,6 +2,247 @@ app-sidenav{
   display: flex;
 }
 
-.home-container{
+.home-container,
+.posts-section,
+.info-section,
+.post-section,
+.header-post,
+.img-post,
+.info-post,
+.header-icon-container,
+.header-username-container,
+.action-post,
+.comments-section,
+.comment-post-section,
+.comment-post-section-content,
+.comments-post-section,
+.likes-post,
+.input-section,
+.info-header,
+.info-img-section,
+.info-username-section
+{
   display: flex;
+  //border: solid 1px black;
+}
+
+.home-section{
+  position: absolute;
+  left: 24vw;
+  display: flex;
+  width: 76vw;
+  justify-content: center;
+}
+.content-section{
+  display: flex;
+  width: 80vw;
+}
+.posts-section{
+  width: 60%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.info-section {
+  width: 40%;
+}
+
+.post-section{
+  width: 40vw;
+  border: rebeccapurple solid 1px;
+  border-radius: 14px;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.header-post{
+  width: 100%;
+  height: 7vh;
+}
+.header-icon-container{
+  width: 50px;
+  height: 100%;
+  margin-left: 20px;
+  justify-content: center;
+  align-content: center;
+
+}
+.header-username-container{
+  height: 100%;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.header-username-container > span {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-weight: 600;
+}
+.header-icon{
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+.img-post{
+  width: 100%;
+  height: 75vh;
+}
+.img-post > img {
+  width: 100%;
+}
+.action-post{
+  width: 100%;
+  height: 6vh;
+  margin-bottom: 5px;
+}
+.action-post > div{
+  display: flex;
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.save-icon-container{
+  margin-left: auto!important;
+  margin-right: 10px;
+}
+.info-post{
+  width: 100%;
+  //height: 30vh;
+  flex-direction: column;
+}
+.comments-section{
+  width: 100%;
+  //min-height: 18vh;
+  max-height: 18vh;
+  flex-direction: column;
+}
+.comment-post-section{
+  width: 100%;
+  //height: 9vh;
+  max-height: 9vh;
+  padding: 0 12px;
+  overflow: scroll;
+}
+.comment-post-section-content{
+  width: 100%;
+  cursor: pointer;
+}
+.comment-post-section-content > span {
+  display: inline;
+}
+.comments-post-section{
+  width: 100%;
+  min-height: 4vh;
+  max-height: 9vh;
+  padding: 0 12px;
+  overflow: scroll;
+  margin-top: 10px;
+}
+
+.comment-post-section-content > span,
+.comment-post-section-content > span > span,
+.likes-post > span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant-caps: normal;
+}
+
+.comment-post-section-content > span{
+  font-weight: 600;
+}
+.comment-post-section-content > span > span{
+  font-weight: 400;
+}
+
+.likes-post{
+  width: 100%;
+  height: 2vh;
+  padding: 0 15px;
+  margin-bottom: 5px;
+}
+.likes-post > span {
+  font-weight: 600;
+}
+
+.input-section{
+  width: 100%;
+  border-top: solid 0.5px rebeccapurple;
+}
+.icon-container > button{
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.text-area{
+  padding-top: 15px;
+  max-height: 20px;
+}
+.button-send{
+  margin-top: 2px;
+}
+
+.info-header{
+  width: 100%;
+  height: 10vh;
+  margin-top: 15px;
+  position: fixed;
+  margin-left: 6vw;
+}
+.info-img-section{
+  width: 80px;
+  height: 10vh;
+  margin-right: 10px;
+  justify-content: center;
+  justify-items: center;
+  cursor: pointer;
+}
+.info-img-section > img {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: solid 1px black;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.info-username-section{
+  width: auto;
+  height: 10vh;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}
+.info-username-section > div{
+  display: flex;
+}
+.info-username-section > div:first-child{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-weight: 600;
+}
+.info-username-section > div:last-child{
+  color: rgb(142, 142, 142);
+  direction: ltr;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-weight: 400;
 }

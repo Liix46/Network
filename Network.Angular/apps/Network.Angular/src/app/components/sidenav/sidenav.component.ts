@@ -115,4 +115,14 @@ export class SidenavComponent implements OnInit {
     }
 
   }
+
+  logOut(): void {
+    const res = confirm('Are you sure to exit?');
+
+    if (res === true){
+       localStorage.removeItem('username');
+       localStorage.removeItem('accessToken');
+     }
+
+  }
 }

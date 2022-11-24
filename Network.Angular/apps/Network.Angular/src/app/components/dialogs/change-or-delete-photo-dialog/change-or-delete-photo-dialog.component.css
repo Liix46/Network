@@ -64,6 +64,7 @@
 ::ng-deep .mat-dialog-container{
   padding: 0px;
   border-radius: 12px;
+  width: max-content;
 }
 .mat-stroked-button{
   border-radius: 0px;

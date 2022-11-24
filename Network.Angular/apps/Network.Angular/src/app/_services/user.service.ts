@@ -9,6 +9,7 @@ import {UserSearchDto} from "../_models/users/UserSearchDto";
 import {serializeJson} from "nx/src/utils/json";
 import {SearchDto} from "../_models/shared/SearchDto";
 import {AddFollowDto} from "../_models/shared/AddFollowDto";
+import {FollowingDto} from "../_models/following/FollowingDto";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class UserService {
   username : string | null = localStorage.getItem('username') ;
 
   constructor(private http: HttpClient) { }
+
+  getUserById(userId: number | undefined) : Observable<User>{
+    return  this.http.get<User>(this.baseUrl + 'userId/' + userId);
+  }
 
   getUser(username:string|undefined = undefined): Observable<User>{
     if (username){
@@ -90,4 +95,9 @@ export class UserService {
     return this.http.post<boolean>(url, addFollowDto);
   }
 
+  getFollowingPostsByUsername() : Observable<Array<FollowingDto>>{
+    const url = this.baseUrl + 'following/'+ this.username;
+
+    return this.http.get<Array<FollowingDto>>(url);
+  }
 }

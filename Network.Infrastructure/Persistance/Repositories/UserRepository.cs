@@ -125,13 +125,27 @@ public class UserRepository : IUserRepository
     {
         var userFrom = await GetByUsername(usernameFrom);
         var userTo = await GetByUsername(usernameTo);
+
+        Following following = new() {UserId = userFrom.Id, FollowingId =  userTo.Id};
+        Follower follower = new() {UserId = userTo.Id, FollowerId = userFrom.Id};
         
-        await _networkDbContext.Followings.AddAsync(new Following() {UserId = userFrom.Id});
-        await _networkDbContext.Followers.AddAsync(new Follower() {UserId = userTo.Id});
-        await SaveChangesAsync();
+        
+         await _networkDbContext.Followings.AddAsync(following);
+         await _networkDbContext.Followers.AddAsync(follower);
+         
+        
+         // userFrom.Followings.Add(following);
+         // userTo.Followers.Add(follower);
+         await SaveChangesAsync();
         
         return true;
     }
+
+    public async Task<IQueryable<User>> GetFollowings()
+    {
+        return IncludeProperties(user => user.Followings);
+    }
+
 
     private IQueryable<User> IncludeProperties(params Expression<Func<User, object>>[] includeProperties)
     {

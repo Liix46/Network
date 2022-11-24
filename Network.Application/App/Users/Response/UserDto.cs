@@ -4,7 +4,8 @@ namespace Network.Application.App.Users.Response;
 
 public class UserDto
 {
-    public string? Username { get; set; }
+    public int? Id { get; set; }
+    public string? UserName { get; set; }
     public string? Name { get; set; }
     public string? Bio { get; set; }
     public Gender Gender { get; set; }

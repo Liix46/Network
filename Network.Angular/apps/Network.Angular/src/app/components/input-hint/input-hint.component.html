@@ -1,7 +1,6 @@
 <form class="form ">
   <mat-form-field class="full-width" appearance="fill">
-<!--    <mat-label>Message</mat-label>-->
-    <textarea #message matInput placeholder="Write a caption..." [(ngModel)]="textArea" [ngModelOptions]="{standalone:true}" (change)="changeAreaText()"></textarea>
+    <textarea id="textArea" #message matInput placeholder="Write a caption..." [(ngModel)]="textArea" [ngModelOptions]="{standalone:true}" (change)="changeAreaText()"></textarea>
     <mat-hint align="start" class="mat-hint-start">
       <button mat-icon-button (click)="isEmojiPickerVisible = !isEmojiPickerVisible;">😀</button>
       <emoji-mart class="emoji-mart" *ngIf="isEmojiPickerVisible" (emojiSelect)="addEmoji($event)" title="Choose your emoji"></emoji-mart>

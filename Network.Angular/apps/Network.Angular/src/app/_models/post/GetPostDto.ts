@@ -1,19 +1,15 @@
 import {Image} from "../shared/Image";
 import {Like} from "../shared/Like";
+import {Comment} from "../shared/Comment"
+import {User} from "../users/User";
 
 export interface GetPostDto {
-//   public int Id { get; set; }
-// public DateTime DatePublication { get; set; }
-//
-// public List<Comment>? Comments { get; set; }
-// public List<Image>? Images { get; set; }
-// public List<Like>? Likes { get; set; }
-//
-// public int UserId { get; set; }
   id : number,
   datePublication: Date,
+  description : string | undefined,
   userId : number,
-  images : Array<Image> | undefined,
+  image : Image | null | undefined,
   likes : Array<Like> | undefined,
   comments : Array<Comment> | undefined
+  user: User | undefined
 }

@@ -82,7 +82,7 @@ public class PostController : AppBaseController
         return Ok(postDto);
     }
 
-    [HttpGet("{userId}")]
+    [HttpGet("user/{userId}")]
     public async Task<IActionResult>  GetPostsByUserId(int userId)
     {
         var posts = await _mediator
@@ -90,7 +90,7 @@ public class PostController : AppBaseController
         return Ok(posts);
     }
 
-    [HttpGet("{username}")]
+    [HttpGet("username/{username}")]
     public async Task<IActionResult>  GetPostsByUsername(string username)
     {
         var posts = await _mediator
@@ -105,6 +105,14 @@ public class PostController : AppBaseController
         await _mediator.Send(updatePostCommand);
         return new OkResult();
     }
-    
-    
+
+    [Authorize]
+    [HttpGet("following-posts/{username}/{count:int}")]
+    public async Task<IActionResult> GetPostsByFollowings(string username, int count)
+    {
+        
+        var result = await _mediator.Send(new GetPostByFollowingsQuery(){Username = username, Start = count});
+        return Ok(result);
+    }
+
 }

@@ -8,7 +8,7 @@ public class GetPostByFieldDto
     public DateTime DatePublication { get; set; }
     
     public List<Comment>? Comments { get; set; }
-    public List<Image>? Images { get; set; }
+    public Image? Image { get; set; }
     public List<Like>? Likes { get; set; }
     
     public int UserId { get; set; }

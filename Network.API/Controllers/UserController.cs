@@ -21,6 +21,13 @@ public class UserController  : AppBaseController
     }
 
     [Authorize]
+    [HttpGet("userId/{userId}")]
+    public async Task<IActionResult> GetUserById(int userId)
+    {
+        return Ok(await _mediator.Send(new GetUserByIdQuery() {UserId = userId}));
+    }
+
+    [Authorize]
     [HttpGet("count-posts/{username}")]
     public async Task<IActionResult> GetCountPostsByUser(string username)
     {
@@ -70,4 +77,6 @@ public class UserController  : AppBaseController
     {
         return Ok(await _mediator.Send(postFollowUserCommand));
     }
+
+ 
 }

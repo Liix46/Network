@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Network.Domain.Models;
 
 public class Image : BaseEntity
@@ -8,5 +10,6 @@ public class Image : BaseEntity
     
     //one
     public int PostId { get; set; }
+    [JsonIgnore]
     public Post Post { get; set; }
 }

@@ -16,7 +16,7 @@
         </div>
         <section class="info-container">
           <div class="header-section">
-            <h2 class="h2-full" [textContent]="user?.username"></h2>
+            <h2 class="h2-full" [textContent]="user?.userName"></h2>
             <div class="follow-button-container">
               <button mat-flat-button color="primary" class="active-button"
               (click)="addFollow()">Follow</button>
@@ -64,7 +64,7 @@
         </a>
       </div>
       <div class="posts-container">
-        <div class="post-container" *ngFor="let image of images">
+        <div class="post-container" *ngFor="let image of images" (click)="showPostInfo(image.postId)">
           <div class="post-content">
             <img [srcset]="image.url" class="image-item">
           </div>

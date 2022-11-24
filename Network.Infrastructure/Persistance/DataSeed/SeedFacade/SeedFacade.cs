@@ -10,7 +10,7 @@ public class SeedFacade
 {
     public static async Task SeedData(NetworkDbContext networkDbContext, UserManager<User> userManager)
     {
-        await networkDbContext.Database.MigrateAsync();
+        //await networkDbContext.Database.MigrateAsync();
 
         await UsersSeed.Seed(userManager);
         await PostsSeed.Seed(networkDbContext);

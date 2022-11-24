@@ -3,7 +3,6 @@ import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {CreatePostDto} from "../_models/post/CreatePostDto";
 import {Observable} from "rxjs";
-import {Image} from "../_models/shared/Image";
 import {GetPostDto} from "../_models/post/GetPostDto";
 
 @Injectable({
@@ -24,5 +23,12 @@ export class PostService {
   getAllPosts(): Observable<GetPostDto[]>{
     return this.http.get<GetPostDto[]>(this.baseUrl + this.username);
   }
+  getPost(postId: number|undefined): Observable<GetPostDto>{
+    return this.http.get<GetPostDto>(this.baseUrl + postId);
+  }
 
+  getPostsByFollowing(username: string, count: number ): Observable<Array<GetPostDto>>{
+    const url = this.baseUrl + 'following-posts/' + username + '/' + count;
+    return this.http.get<Array<GetPostDto>>(url)
+  }
 }

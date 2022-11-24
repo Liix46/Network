@@ -59,8 +59,11 @@ export class ProfileComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     })
   }
-  showPostInfo(){
-    const dialogRef = this.dialog.open(PostInfoDialogComponent);
+  showPostInfo(postId: number|undefined){
+    console.log(postId);
+    const dialogRef = this.dialog.open(PostInfoDialogComponent, {
+      data : postId
+    });
 
   }
 }

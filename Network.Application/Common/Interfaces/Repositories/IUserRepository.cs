@@ -27,4 +27,6 @@ public interface IUserRepository
     Task<IEnumerable<UserSearchDto>> GetSearchUsersByUsername(string searchString);
 
     Task<bool> AddFollowing(string usernameFrom, string usernameTo);
+
+    Task<IQueryable<User>> GetFollowings();
 }
