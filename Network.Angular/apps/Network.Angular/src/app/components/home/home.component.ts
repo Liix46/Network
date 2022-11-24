@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public user : User | undefined;
   followings : Array<FollowingDto> | undefined;
   posts: Array<GetPostDto> | undefined;
+  currentHeight: string = '0';
   constructor(private userService: UserService, private postService: PostService) { }
 
   lastKnownScrollPosition = 0;
@@ -27,18 +28,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
   style: any;
   doSomething(scrollPos : any) {
 
-    if (this.style['bottom'].replace('-', '').replace('px', '') < scrollPos){
+    const height :string = this.style['bottom'].replace('-', '').replace('px', '');
+    //console.log(height);
+    if (height!=undefined && height!="" && height < scrollPos && this.currentHeight != height){
+      //alert(height);
+      this.currentHeight = height;
       // @ts-ignore
       this.postService.getPostsByFollowing(localStorage.getItem('username'), this.posts?.length).subscribe(response =>{
-        for (const post of response) {
-          // @ts-ignore
-          post.image.url = environment.apiFilesUrl + post.image.url;
-          // @ts-ignore
-          post.user.urlMainImage = environment.apiFilesUrl + post.user.urlMainImage;
-        }
+        //console.log(response);
+
         if (response.length > 0){
+          for (const post of response) {
+            // @ts-ignore
+            post.image.url = environment.apiFilesUrl + post.image.url;
+            // @ts-ignore
+            post.user.urlMainImage = environment.apiFilesUrl + post.user.urlMainImage;
+          }
           // @ts-ignore
-          this.posts?.push(response);
+          //this.posts?.push(response as GetPostDto[]);
+          for (const post of response) {
+            this.posts?.push(post);
+          }
+          //console.log(this.posts);
         }
       })
     }

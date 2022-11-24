@@ -26,8 +26,5 @@ export class FileUploadService {
     return this.http.post(this.baseUrl + 'avatar/' + this.username , formData);
   }
 
-  getFiles(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/uploads`);
-  }
 
 }

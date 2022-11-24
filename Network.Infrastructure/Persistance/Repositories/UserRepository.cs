@@ -145,7 +145,7 @@ public class UserRepository : IUserRepository
         
          // userFrom.Followings.Add(following);
          // userTo.Followers.Add(follower);
-         //await SaveChangesAsync();
+         await SaveChangesAsync();
         
         return true;
     }
