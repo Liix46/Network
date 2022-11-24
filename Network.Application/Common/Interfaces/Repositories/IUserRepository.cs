@@ -13,6 +13,7 @@ public interface IUserRepository
     Task<List<User>> GetAll();
     Task<List<User>> GetAllWithInclude( params Expression<Func<User?, object>>[] includeProperties);
     Task SaveChangesAsync();
+    Task UpdateChangesAsync(User user);
     Task<User?> Delete(int id);
 
     Task<int?> GetCountPosts(string username);

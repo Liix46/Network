@@ -31,7 +31,7 @@ public class SaveFileCommandHandler : IRequestHandler<SaveFileCommand, string?>
         
         var user = await _repository.GetByUsername(request.Username);
         user.UrlMainImage = path.Substring(path.IndexOf("uploads"));
-        _repository.SaveChangesAsync();
+        await _repository.UpdateChangesAsync(user);
         return path;
     }
 }

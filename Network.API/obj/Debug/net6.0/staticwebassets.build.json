@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lKaFQJJ553xPZyAEp95mToMgOIlXNs+GUKo8VtYoVps=",
+  "Hash": "Dn55Wbi16eqRSfBghhqf5eUUMypSdMowlPoiVXV4ckY=",
   "Source": "Network.API",
   "BasePath": "_content/Network.API",
   "Mode": "Default",
@@ -153,6 +153,40 @@
       "OriginalItemSpec": "wwwroot/uploads/Liix46/f74b1a23-0e7d-1877-6888-0fc7e98bfd9a.jpeg"
     },
     {
+      "Identity": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/uploads/therock/03665dc4-4416-4fba-999e-e6eae6af9cdf.jpeg",
+      "SourceId": "Network.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/",
+      "BasePath": "_content/Network.API",
+      "RelativePath": "uploads/therock/03665dc4-4416-4fba-999e-e6eae6af9cdf.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/therock/03665dc4-4416-4fba-999e-e6eae6af9cdf.jpeg"
+    },
+    {
+      "Identity": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/uploads/therock/413e5587-1785-bf5b-7e6f-2c22744678f7.jpeg",
+      "SourceId": "Network.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/",
+      "BasePath": "_content/Network.API",
+      "RelativePath": "uploads/therock/413e5587-1785-bf5b-7e6f-2c22744678f7.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/therock/413e5587-1785-bf5b-7e6f-2c22744678f7.jpeg"
+    },
+    {
       "Identity": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/uploads/therock/7ae06bb4-1630-3a71-a65e-6f8077f13d56.jpeg",
       "SourceId": "Network.API",
       "SourceType": "Discovered",
@@ -219,6 +253,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/uploads/therock/be9dc801-da50-3d09-1419-200c5465a0a4.jpeg"
+    },
+    {
+      "Identity": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/uploads/therock/eaf1e5f5-0e6f-b6ec-66ac-fe357378fb94.jpeg",
+      "SourceId": "Network.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/",
+      "BasePath": "_content/Network.API",
+      "RelativePath": "uploads/therock/eaf1e5f5-0e6f-b6ec-66ac-fe357378fb94.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/therock/eaf1e5f5-0e6f-b6ec-66ac-fe357378fb94.jpeg"
     },
     {
       "Identity": "/Users/apple/Amdaris/Web/Network/Network.API/wwwroot/uploads/therock/fba3971f-8a12-b6ef-40cf-9cd4f23037e8.jpeg",

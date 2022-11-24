@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Network.Application.App.Users.Response;
 using Network.Application.Common.Exceptions;
@@ -15,12 +16,14 @@ public class UserRepository : IUserRepository
     private readonly NetworkDbContext _networkDbContext;
     private readonly IMapper _mapper;
     private readonly IRepository _entityRepository;
+    private readonly UserManager<User> _userManager;
 
-    public UserRepository(NetworkDbContext networkDbContext, IMapper mapper, IRepository repository)
+    public UserRepository(NetworkDbContext networkDbContext, IMapper mapper, IRepository repository, UserManager<User> userManager)
     {
         _networkDbContext = networkDbContext;
         _mapper = mapper;
         _entityRepository = repository;
+        _userManager = userManager;
     }
 
 
@@ -62,6 +65,12 @@ public class UserRepository : IUserRepository
         await _networkDbContext.SaveChangesAsync();
     }
 
+    public async Task UpdateChangesAsync(User user)
+    {
+        await _userManager.UpdateAsync(user);
+        await SaveChangesAsync();
+    }
+
     public async Task<User?> Delete(int id)
     {
         var entity = await _networkDbContext.Set<User>().FindAsync(id);
@@ -101,7 +110,7 @@ public class UserRepository : IUserRepository
     {
         var user = await _networkDbContext.Users.FirstOrDefaultAsync(entity => entity != null && entity.UserName == username);
         user.UrlMainImage = "";
-        await SaveChangesAsync();
+        await UpdateChangesAsync(user);
     }
 
     public async Task<IEnumerable<ImageDto>> GetUserImages(string username)
@@ -136,7 +145,7 @@ public class UserRepository : IUserRepository
         
          // userFrom.Followings.Add(following);
          // userTo.Followers.Add(follower);
-         await SaveChangesAsync();
+         //await SaveChangesAsync();
         
         return true;
     }

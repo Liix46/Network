@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\uploads" />
+      <Folder Include="wwwroot\uploads\gust_taid\avatars" />
       <Folder Include="wwwroot\uploads\Liix46\avatars" />
     </ItemGroup>
 
